@@ -1,7 +1,7 @@
 const { model, Schema } = require("mongoose");
 
 const movieSchema = new Schema({
-    name: {
+    title: {
         type: String,
         required: true,
     },
@@ -9,6 +9,12 @@ const movieSchema = new Schema({
         type: String,
         required: true,
     },
-    stars: [string],
+    stars: [String],
+    image: String,
+    description: String,
+    showtimes: [String]
+});
 
-})
+const Movie = model("Movies", movieSchema);
+
+module.exports = Movie;
